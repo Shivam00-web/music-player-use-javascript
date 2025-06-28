@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🎵 Shivam's Music Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #888;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        audio {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🎶 Select a Song to Play</h2>
+
+    <!-- ✅ Correct song path given inside songs/ folder -->
+    <select id="songList" onchange="changeSong()">
+        <option value="songs/vaaste.mp3">Vaaste</option>
+        <option value="songs/Bedardi.mp3">Bedardi</option>
+        <option value="songs/Fitoor.mp3">Fitoor</option>
+    </select>
+
+    <br><br>
+
+    <!-- ✅ Initial song set with correct path -->
+    <audio id="myAudio" src="songs/vaaste.mp3" controls></audio>
+
+    <div style="margin-top: 20px;">
+        <button onclick="playSong()">▶️ Play</button>
+        <button onclick="pauseSong()">⏸️ Pause</button>
+        <button onclick="restartSong()">🔁 Restart</button>
+    </div>
+
+    <script>
+        const audio = document.getElementById("myAudio");
+        const songList = document.getElementById("songList");
+
+        function changeSong() {
+            audio.src = songList.value;
+            audio.play();
+        }
+
+        function playSong() {
+            audio.play();
+        }
+
+        function pauseSong() {
+            audio.pause();
+        }
+
+        function restartSong() {
+            audio.currentTime = 0;
+            audio.play();
+        }
+    </script>
+
+</body>
+</html>

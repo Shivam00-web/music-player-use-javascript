@@ -1,0 +1,51 @@
+*{ 
+
+margin: 0%;
+}
+header {
+    background-color: #333;
+    padding: 20Px;
+    text-align: center;
+}
+
+/* Style the navbar div */
+.navbaar {
+    background-color: #ff9800;
+    color: white;
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 10px;
+  
+}
+.logo{
+
+    background-image: url("amazon_logo.png");
+    height: 50px;
+    width: 100px;
+    background-size: cover;
+    display: flex;
+    justify-content: left;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
